@@ -2,9 +2,11 @@ name: 'say-hello'
 description: 'Returns a greeting output with a greeting to the input name'
 inputs:
   name:
+    description: Name
     required: true
 outputs:
   greeting:
+    description: Greeting
     required: true
 runs:
   using: "composite"

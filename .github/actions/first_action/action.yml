@@ -11,4 +11,4 @@ runs:
       env:
         INPUT_NAME: ${{ inputs.action-number }}
       shell: bash
-      run: Hello from $INPUT_NAME Action
+      run: echo Hello from $INPUT_NAME Action
