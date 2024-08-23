@@ -8,13 +8,13 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Call Composite Action hello-from
-        uses: ../actions/first_action.yml
+        uses: ./.github/actions/first_action.yml
         id: hello-from
         with:
           name: "First"
 
       - name: Call Composite Action say-hello
-        uses: ../actions/second_action.yml
+        uses: ./.github/actions/second_action.yml
         id: say-hello
         with:
           name: Caio
@@ -24,7 +24,7 @@ jobs:
           echo ${{ steps.say-hello.outputs.greeting }}
 
       - name: Call Composite Action hello-from
-        uses: ../actions/first_action.yml
+        uses: ./.github/actions/first_action.yml
         id: hello-from-third
         with:
           name: "Third"
