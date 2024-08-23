@@ -1,5 +1,5 @@
-name: 'say-hello'
-description: 'Returns a greeting output with a greeting to the input name'
+name: "say-hello"
+description: "Returns a greeting output with a greeting to the input name"
 inputs:
   name:
     description: Name
@@ -7,7 +7,7 @@ inputs:
 outputs:
   greeting:
     description: Greeting
-    required: true
+    value: ${{ steps.say-hello.outputs.greeting }}
 runs:
   using: "composite"
   steps:
