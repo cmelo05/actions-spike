@@ -17,4 +17,4 @@ runs:
         INPUT_NAME: ${{ inputs.name }}
       run: |
         GREETING="Hello $INPUT_NAME"
-        echo "::set-output name=greeting::$GREETING"
+        echo "greeting=$GREETING" >> $GITHUB_OUTPUT
