@@ -1,0 +1,13 @@
+name: hello-from
+description: 'Says Hello from Action Number'
+inputs:
+  action-number:
+    required: true
+runs:
+  using: "composite"
+  steps:
+    - name: Says Hello
+      env:
+        INPUT_NAME: ${{ inputs.action-number }}
+      shell: bash
+      run: Hello from $INPUT_NAME Action

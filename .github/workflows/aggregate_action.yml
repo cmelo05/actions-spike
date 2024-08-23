@@ -1,0 +1,30 @@
+name: Greetings
+on: [workflow_dispatch]
+jobs:
+  aggregate_action:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout this repo
+        uses: actions/checkout@v2
+
+      - name: Call Composite Action hello-from
+        uses: ../actions/hello-from
+        id: hello-from
+        with:
+          name: "First"
+
+      - name: Call Composite Action say-hello
+        uses: ../actions/say-hello
+        id: say-hello
+        with:
+          name: Caio
+
+      - name: echo output from say-hello
+        run: |
+          echo ${{ steps.say-hello.outputs.greeting }}
+
+      - name: Call Composite Action hello-from
+        uses: ../actions/hello-from
+        id: hello-from-third
+        with:
+          name: "Third"
