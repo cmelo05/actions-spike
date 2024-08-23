@@ -2,6 +2,7 @@ name: hello-from
 description: 'Says Hello from Action Number'
 inputs:
   action-number:
+    description: This is the Action Number
     required: true
 runs:
   using: "composite"
