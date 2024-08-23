@@ -11,8 +11,9 @@ outputs:
 runs:
   using: "composite"
   steps:
-    - name: say-hello
+    - name: Creates Greeting
       shell: bash
+      id: say-hello
       env:
         INPUT_NAME: ${{ inputs.name }}
       run: |
