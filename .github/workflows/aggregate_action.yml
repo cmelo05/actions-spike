@@ -11,13 +11,13 @@ jobs:
         uses: ./.github/actions/first_action
         id: hello-from
         with:
-          name: "First"
+          action-number: "First"
 
       - name: Call Composite Action say-hello
         uses: ./.github/actions/second_action
         id: say-hello
         with:
-          action-number: Caio
+          name: Caio
 
       - name: echo output from say-hello
         run: |
@@ -27,4 +27,4 @@ jobs:
         uses: ./.github/actions/first_action
         id: hello-from-third
         with:
-          name: "Third"
+          action-number: "Third"
